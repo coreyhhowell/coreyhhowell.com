@@ -53,6 +53,7 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: space-between;
     align-items: center;
     height: 80px;
+    position: relative;
 }
 
 /* Hamburger Menu Button */
@@ -64,7 +65,10 @@ h1, h2, h3, h4, h5, h6 {
     background: none;
     border: none;
     z-index: 1001;
-    position: relative;
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .hamburger span {
@@ -87,6 +91,33 @@ h1, h2, h3, h4, h5, h6 {
 
 .hamburger.active span:nth-child(3) {
     transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Ensure hamburger is always visible on mobile */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: absolute !important;
+        right: 1rem !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        z-index: 1001 !important;
+        background: rgba(255, 255, 255, 0.9) !important;
+        border-radius: 4px !important;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+    }
+    
+    /* Override any flexbox interference */
+    .nav-container {
+        position: relative !important;
+    }
+    
+    /* Ensure nav-links don't interfere with hamburger */
+    .nav-links {
+        z-index: 1000 !important;
+    }
 }
 
 .logo {
@@ -173,6 +204,10 @@ h1, h2, h3, h4, h5, h6 {
         display: flex !important;
         visibility: visible !important;
         opacity: 1 !important;
+        position: absolute !important;
+        right: 1rem !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
     }
     
     .nav-links {
@@ -195,9 +230,6 @@ h1, h2, h3, h4, h5, h6 {
     
     .nav-links.active {
         right: 0 !important;
-        /* Temporary debug styling */
-        background: #f0f0f0 !important;
-        border: 2px solid red !important;
     }
     
     .nav-links li {
@@ -251,6 +283,10 @@ h1, h2, h3, h4, h5, h6 {
         display: flex !important;
         visibility: visible !important;
         opacity: 1 !important;
+        position: absolute !important;
+        right: 1rem !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
     }
     
     .hamburger span {
