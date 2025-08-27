@@ -31,6 +31,60 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  // ===== HAMBURGER MENU FUNCTIONALITY =====
+  // This makes the mobile hamburger menu work
+
+  // Find the hamburger button and navigation links
+  const hamburger = document.querySelector(".hamburger");
+  const mobileNavLinks = document.querySelector(".nav-links");
+
+  // Debug logging
+  console.log("Hamburger element:", hamburger);
+  console.log("Nav links element:", mobileNavLinks);
+  console.log("DOM fully loaded, setting up hamburger menu");
+
+  // Add click event to hamburger button
+  if (hamburger && mobileNavLinks) {
+    console.log("Setting up hamburger menu events");
+    
+    hamburger.addEventListener("click", function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      console.log("Hamburger clicked!");
+      
+      // Toggle the active class on both elements
+      hamburger.classList.toggle("active");
+      mobileNavLinks.classList.toggle("active");
+      
+      // Debug: Check if classes were added
+      console.log("Hamburger classes:", hamburger.className);
+      console.log("Nav links classes:", mobileNavLinks.className);
+      
+      // Prevent body scroll when menu is open
+      document.body.style.overflow = mobileNavLinks.classList.contains("active") ? "hidden" : "";
+      
+      console.log("Menu active:", mobileNavLinks.classList.contains("active"));
+    });
+
+    // Close menu when clicking on a navigation link
+    mobileNavLinks.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", function () {
+        hamburger.classList.remove("active");
+        mobileNavLinks.classList.remove("active");
+        document.body.style.overflow = "";
+      });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener("click", function (e) {
+      if (!hamburger.contains(e.target) && !mobileNavLinks.contains(e.target)) {
+        hamburger.classList.remove("active");
+        mobileNavLinks.classList.remove("active");
+        document.body.style.overflow = "";
+      }
+    });
+  }
+
   // ===== NAVBAR SCROLL EFFECT =====
   // This makes the navigation bar change appearance when you scroll down
 
