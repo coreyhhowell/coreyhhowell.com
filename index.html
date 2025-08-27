@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Corey Howell dot com</title>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="#home" class="logo">
+          <svg
+            class="logo-svg"
+            viewBox="0 0 2017.08 2010.06"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g>
+              <rect
+                class="logo-rect"
+                x="806.83"
+                y="403.42"
+                width="403.42"
+                height="403.42"
+              />
+              <polygon
+                class="logo-poly"
+                points="403.42 0 0 0 0 403.42 0 806.83 403.42 806.83 403.42 403.42 806.83 403.42 806.83 0 403.42 0"
+              />
+              <polygon
+                class="logo-poly"
+                points="1613.67 0 1210.25 0 1210.25 403.42 1613.67 403.42 1613.67 806.83 2017.08 806.83 2017.08 403.42 2017.08 0 1613.67 0"
+              />
+              <polygon
+                class="logo-poly"
+                points="1613.67 1203.23 1613.67 1606.65 1210.25 1606.65 1210.25 2010.06 1613.67 2010.06 2017.08 2010.06 2017.08 1606.65 2017.08 1203.23 1613.67 1203.23"
+              />
+              <polygon
+                class="logo-poly"
+                points="403.42 1606.65 403.42 1203.23 0 1203.23 0 1606.65 0 2010.06 403.42 2010.06 806.83 2010.06 806.83 1606.65 403.42 1606.65"
+              />
+              <rect
+                class="logo-rect"
+                x="806.83"
+                y="1203.23"
+                width="403.42"
+                height="403.42"
+              />
+            </g>
+          </svg>
+        </a>
+        <ul class="nav-links">
+          <li><a href="works.html">Works</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main>
+      <section id="home" class="hero">
+        <div id="hero-canvas-container"></div>
+        <div class="hero-content">
+          <h1 class="hero-title">
+            I'm Corey,<span id="cycling-title">multidisciplinary designer</span>
+          </h1>
+          <a href="#work" class="cta-button">View My Work</a>
+        </div>
+      </section>
+
+      <section id="work" class="work">
+        <div class="container">
+          <h2 class="section-title">Selected Work</h2>
+          <div class="projects-grid">
+            <article class="project-card-full">
+              <a href="works/wayside-ar-experience.html" class="project-link">
+                <div class="project-image-full">
+                  <img
+                    src="projectImages/waysidesImages/wayside_thumbnail.png"
+                    alt="Wayside.at AR Experience project thumbnail"
+                    style="width: 100%; height: 100%; object-fit: cover"
+                  />
+                  <div class="project-overlay">
+                    <h3>Wayside.at AR Experience</h3>
+                    <p>
+                      Immersive augmented reality experience blending digital
+                      content with physical environments
+                    </p>
+                    <div class="project-tags">
+                      <span class="tag">Unity</span>
+                      <span class="tag">ARKit/ARCore</span>
+                      <span class="tag">3D Modeling</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="project-content-full">
+                  <h3>Wayside.at AR Experience</h3>
+                  <p>Augmented Reality • Interactive Design</p>
+                </div>
+              </a>
+            </article>
+            <article class="project-card-full">
+              <a
+                href="works/circuit-workers-congress.html"
+                class="project-link"
+              >
+                <div class="project-image-full">
+                  <img
+                    src="projectImages/cwcImages/thumbnail_cwc.png"
+                    alt="Circuit Workers' Congress project thumbnail"
+                    style="width: 100%; height: 100%; object-fit: cover"
+                  />
+                  <div class="project-overlay">
+                    <h3>Circuit Workers' Congress</h3>
+                    <p>
+                      Interactive installation exploring the intersection of
+                      technology and social commentary
+                    </p>
+                    <div class="project-tags">
+                      <span class="tag">Arduino</span>
+                      <span class="tag">Interactive Electronics</span>
+                      <span class="tag">Social Commentary</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="project-content-full">
+                  <h3>Circuit Workers' Congress</h3>
+                  <p>Interactive Installation • Social Commentary</p>
+                </div>
+              </a>
+            </article>
+            <article class="project-card-full">
+              <a href="works/nasa-earth-data.html" class="project-link">
+                <div
+                  class="project-image-full"
+                  style="
+                    background-image: url('projectImages/nasaHackathonImages/nasaspaceapps_processphotos1.png');
+                    background-size: cover;
+                    background-position: center;
+                  "
+                >
+                  <div class="project-overlay">
+                    <h3>
+                      Transforming complex NASA satellite data into accessible
+                      agricultural insights for farmers.
+                    </h3>
+                    <p>
+                      Interactive data visualization exploring neural network
+                      architectures through real-time animation
+                    </p>
+                  </div>
+                </div>
+                <div class="project-content-full">
+                  <h3>
+                    Transforming complex NASA satellite data into accessible
+                    agricultural insights for farmers.
+                  </h3>
+                  <p>Data Visualization • Agriculture</p>
+                </div>
+              </a>
+            </article>
+          </div>
+          <div class="see-all-work">
+            <a href="works.html" class="see-all-btn">See All Work</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="contact">
+        <div class="container">
+          <h2 class="section-title">Get In Touch</h2>
+          <div class="contact-content">
+            <p>Let's work together.</p>
+            <a href="mailto:coreyhhowell@gmail.com" class="contact-link"
+              >Contact</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2025 Corey Howell. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="index.js"></script>
+  </body>
+</html>
