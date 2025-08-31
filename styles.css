@@ -1,6 +1,12 @@
 /* Global Styles */
 :root {
     --primary-color: #fb5607;
+    --dark-color: #1a1a1a;
+    --light-gray: #6b7280;
+    --medium-gray: #4b5563;
+    --light-bg: #f8f9fa;
+    --white: #ffffff;
+    --transition: all 0.3s ease;
 }
 
 
@@ -15,8 +21,8 @@
 body {
     font-family: 'Funnel Sans', sans-serif;
     line-height: 1.6;
-    color: #1a1a1a;
-    background-color: #ffffff;
+    color: var(--dark-color);
+    background-color: var(--white);
     overflow-x: hidden;
 }
 
@@ -39,10 +45,10 @@ h1, h2, h3, h4, h5, h6 {
     top: 0;
     left: 0;
     right: 0;
-    background: #ffffff;
-    border-bottom: 3px solid #1a1a1a;
+    background: var(--white);
+    border-bottom: 3px solid var(--dark-color);
     z-index: 1000;
-    transition: all 0.3s ease;
+    transition: var(--transition);
 }
 
 .nav-container {
@@ -93,39 +99,12 @@ h1, h2, h3, h4, h5, h6 {
     transform: rotate(45deg) translate(-5px, -6px);
 }
 
-/* Ensure hamburger is always visible on mobile */
-@media (max-width: 768px) {
-    .hamburger {
-        display: flex !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        position: absolute !important;
-        right: 1rem !important;
-        top: 50% !important;
-        transform: translateY(-50%) !important;
-        z-index: 1001 !important;
-        background: rgba(255, 255, 255, 0.9) !important;
-        border-radius: 4px !important;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
-    }
-    
-    /* Override any flexbox interference */
-    .nav-container {
-        position: relative !important;
-    }
-    
-    /* Ensure nav-links don't interfere with hamburger */
-    .nav-links {
-        z-index: 1000 !important;
-    }
-}
-
 .logo {
     font-size: 1.75rem;
     font-weight: 700;
     color: var(--primary-color);
     text-decoration: none;
-    transition: all 0.3s ease;
+    transition: var(--transition);
     position: relative;
     display: flex;
     align-items: center;
@@ -184,13 +163,6 @@ h1, h2, h3, h4, h5, h6 {
         transform: scale(1.15);
     }
 }
-/*  */
-/* .logo:hover .logo-svg { */
-    /* transform: scale(1.1); */
-    /* // filter: drop-shadow(0 4px 8px rgba(251, 86, 7, 0.3)); */
-    /* animation: logoPulse 2s ease-in-out infinite; */
-/* } */
-
 
 .nav-links {
     display: flex;
@@ -208,6 +180,20 @@ h1, h2, h3, h4, h5, h6 {
         right: 1rem !important;
         top: 50% !important;
         transform: translateY(-50%) !important;
+        z-index: 1001 !important;
+        background: rgba(255, 255, 255, 0.9) !important;
+        border-radius: 4px !important;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+    }
+    
+    /* Override any flexbox interference */
+    .nav-container {
+        position: relative !important;
+    }
+    
+    /* Ensure nav-links don't interfere with hamburger */
+    .nav-links {
+        z-index: 1000 !important;
     }
     
     .nav-links {
@@ -280,13 +266,6 @@ h1, h2, h3, h4, h5, h6 {
     
     .hamburger {
         padding: 0.75rem;
-        display: flex !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        position: absolute !important;
-        right: 1rem !important;
-        top: 50% !important;
-        transform: translateY(-50%) !important;
     }
     
     .hamburger span {
@@ -328,7 +307,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-links a:hover {
-    color: #ffffff;
+    color: var(--white);
 }
 
 /* Hero Section */
@@ -345,9 +324,11 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Hero content styles */
 .hero-content {
-    max-width: 1000px;
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
     width: 90%;
-    z-index: 10;
+    padding: 0 2rem;
 }
 
 /* Cycling title styles */
@@ -372,7 +353,6 @@ h1, h2, h3, h4, h5, h6 {
     51%, 100% { opacity: 0; }
 }
 
-
 #hero-canvas-container {
     position: absolute;
     top: 0;
@@ -380,13 +360,6 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
     height: 100%;
     z-index: 0;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 1;
-    max-width: 800px;
-    padding: 0 2rem;
 }
 
 .hero-title {
@@ -451,8 +424,10 @@ section {
     padding: 4rem 0;
 }
 
-/* Override for work section to remove top gap */
+/* Work Section */
 .work {
+    background: #f8f9fa;
+    margin-top: 0;
     padding-top: 6rem;
     padding-bottom: 4rem;
 }
@@ -477,12 +452,6 @@ section {
     width: 80px;
     height: 4px;
     background: var(--primary-color);
-}
-
-/* Work Section */
-.work {
-    background: #f8f9fa;
-    margin-top: 0;
 }
 
 .projects-grid {
@@ -1879,12 +1848,7 @@ section {
     margin-left: 0;
 }
 
-.project-description-text {
-    margin-bottom: 1rem;
-    max-width: 800px;
-    padding-left: 0;
-    margin-left: 0;
-}
+
 
 .project-links-column {
     width: 100%;
@@ -2228,7 +2192,23 @@ section {
     }
     
     .project-subtitle {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+    
+    .project-subtitle-tagline {
         font-size: 1.1rem;
+        line-height: 1.4;
+    }
+    
+    .project-subtitle-date {
+        font-size: 0.9rem;
+    }
+    
+    .project-subtitle-category {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.8rem;
     }
     
     .project-content {
@@ -2268,10 +2248,25 @@ section {
     
     .project-title {
         font-size: 1.75rem;
+        padding-top: 1rem; 
     }
     
     .project-subtitle {
+        gap: 0.75rem;
+    }
+    
+    .project-subtitle-tagline {
         font-size: 1rem;
+        line-height: 1.3;
+    }
+    
+    .project-subtitle-date {
+        font-size: 0.85rem;
+    }
+    
+    .project-subtitle-category {
+        font-size: 0.75rem;
+        padding: 0.3rem 0.6rem;
     }
     
     .project-overview h2 {
@@ -2409,18 +2404,6 @@ section {
     display: block;
 }
 
-/* Image Captions and Photo Credits */
-.image-caption {
-    margin-top: 0.75rem;
-    text-align: center;
-}
-
-.image-caption p {
-    margin: 0.25rem 0;
-    font-size: 0.9rem;
-    color: #6b7280;
-    line-height: 1.4;
-}
 
 .photo-credit {
     font-style: italic;
@@ -2451,7 +2434,7 @@ section {
     border-bottom: none !important;
 }
 
-/* Special styling for ShirtMU to match video width */
+/* Special styling for ShirtMU to match video width, specifically for the Hells Angel Page */
 .project-image-container.large-image:has(.project-image[src*="ShirtMU"]) .project-image {
     width: 100%;
     height: 500px;
@@ -2489,35 +2472,3 @@ section {
     }
 }
 
-/* Exhibition Images Styles */
-.exhibition-images {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-    margin-top: 1rem;
-}
-
-.exhibition-image-container {
-    width: 100%;
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-.exhibition-image {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    display: block;
-}
-
-/* Responsive adjustments for exhibition images */
-@media (max-width: 768px) {
-    .exhibition-images {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-    
-    .exhibition-image {
-        height: 200px;
-    }
-}
