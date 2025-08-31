@@ -1634,8 +1634,14 @@ section {
 
 /* Responsive Design for Works Page */
 @media (max-width: 768px) {
+    .works-filter {
+        padding: 1.5rem 0;
+    }
+    
     .filter-buttons {
         gap: 0.5rem;
+        max-width: 90%;
+        margin: 0 auto;
     }
     
     .filter-btn {
@@ -1678,13 +1684,24 @@ section {
         font-size: 1.1rem;
     }
     
+    .works-filter {
+        padding: 1rem 0;
+    }
+    
     .filter-buttons {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.4rem;
+        max-width: 95%;
+        margin: 0 auto;
     }
     
     .filter-btn {
-        width: 200px;
+        width: auto;
+        min-width: 120px;
+        padding: 0.4rem 0.8rem;
+        font-size: 0.75rem;
     }
     
     .project-image-full {
@@ -2224,6 +2241,12 @@ section {
         font-size: 1.75rem;
     }
     
+    .project-content-section {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+    
     .project-details {
         max-width: 100%;
         padding: 0 1rem;
@@ -2275,6 +2298,21 @@ section {
     
     .project-overview p {
         font-size: 1rem;
+    }
+    
+    .project-content-section {
+        gap: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .project-text-content h3 {
+        font-size: 1rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .project-text-content p {
+        font-size: 0.95rem;
+        line-height: 1.5;
     }
     
     .project-info,
