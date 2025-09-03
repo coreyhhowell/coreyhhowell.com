@@ -1835,13 +1835,6 @@ section {
     width: 100%;
 }
 
-.project-description-text {
-    padding: 20px;
-    margin-bottom: 2rem;
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #4b5563;
-}
 
 .project-info-grid {
     display: grid;
@@ -2127,6 +2120,12 @@ section {
     grid-column: 1 / -1;
 }
 
+.project-description-text {
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #4b5563;
+}
 .project-description h3 {
     font-size: 1.25rem;
     font-weight: 600;
