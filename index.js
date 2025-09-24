@@ -46,23 +46,25 @@ document.addEventListener("DOMContentLoaded", function () {
   // Add click event to hamburger button
   if (hamburger && mobileNavLinks) {
     console.log("Setting up hamburger menu events");
-    
+
     hamburger.addEventListener("click", function (e) {
       e.preventDefault();
       e.stopPropagation();
       console.log("Hamburger clicked!");
-      
+
       // Toggle the active class on both elements
       hamburger.classList.toggle("active");
       mobileNavLinks.classList.toggle("active");
-      
+
       // Debug: Check if classes were added
       console.log("Hamburger classes:", hamburger.className);
       console.log("Nav links classes:", mobileNavLinks.className);
-      
+
       // Prevent body scroll when menu is open
-      document.body.style.overflow = mobileNavLinks.classList.contains("active") ? "hidden" : "";
-      
+      document.body.style.overflow = mobileNavLinks.classList.contains("active")
+        ? "hidden"
+        : "";
+
       console.log("Menu active:", mobileNavLinks.classList.contains("active"));
     });
 
@@ -325,14 +327,12 @@ let circleX, circleY; // Current position
 let circleVX, circleVY; // Current velocity (speed and direction)
 const circleSize = 40; // Size of the square
 
-// Variables for interaction effects
 let isHit = false; // Track if square was just hit
 let hitTimer = 0; // Timer for hit effect
-let hitColor = [251, 86, 7]; // Original orange color
+let paleOrangeColor = [253, 125, 65]; // Original orange color
 let hitSize = circleSize; // Original size
 let permanentSize = circleSize; // Track permanent size growth
 
-// This function runs once when the page loads
 function setup() {
   // Find the hero section and create a canvas that covers it
   const heroSection = document.querySelector(".hero");
@@ -349,17 +349,18 @@ function setup() {
     canvas.style("left", "0");
     canvas.style("z-index", "0");
 
+    // No UI controls on canvas
+
     // Start the square in the center of the screen
     circleX = width / 2;
     circleY = height / 2;
 
     // Give it random velocity (speed and direction)
-    circleVX = random(-4, 4); // Random speed between -4 and 4 pixels per frame
-    circleVY = random(-4, 4);
+    circleVX = random(-4, 8); // Random speed between -4 and 4 pixels per frame
+    circleVY = random(-4, 8);
   }
 }
 
-// This function runs every frame (about 60 times per second)
 function draw() {
   // Clear the background completely (no trails)
   background(255);
@@ -391,20 +392,20 @@ function draw() {
   }
 
   // Draw the square with hit effects
-  noStroke(); // No outline
-
+  // noStroke();
+  strokeWeight(1.5);
   // Change color and size when hit
   if (isHit) {
     // Flash between orange and white when hit
     if (hitTimer % 6 < 3) {
       fill(255, 255, 255); // White
     } else {
-      fill(251, 86, 7); // Orange
+      fill(paleOrangeColor); // Orange
     }
     // Make it bigger when hit (temporary effect)
     hitSize = permanentSize * 1.5;
   } else {
-    fill(251, 86, 7); // Normal orange color
+    fill(paleOrangeColor); // Normal orange color
     hitSize = permanentSize; // Use permanent size
   }
 
